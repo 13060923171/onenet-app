@@ -1,0 +1,2 @@
+rootProject.name='lianjieonenet'
+include ':app'

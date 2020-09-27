@@ -1,0 +1,5 @@
+cmd:AT+NRB
+
+cmd_rsp:
+REBOOTING
+cmd_rsp:

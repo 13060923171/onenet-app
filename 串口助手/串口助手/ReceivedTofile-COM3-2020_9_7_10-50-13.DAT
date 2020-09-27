@@ -1,0 +1,14 @@
+cmd:AT+NRB
+
+cmd_rsp:
+REBOOTING
+cmd_rsp:0ü €cmd:AT+CIMI
+
+cmd_rsp:
+ERROR
+cmd:AT+CMVER
+
+cmd_rsp:
+3.1.0.01092210_release
+
+OK

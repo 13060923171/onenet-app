@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context=".DengLu">
+
+<!--    <TextView-->
+<!--        android:id="@+id/t"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="账号："-->
+<!--        android:layout_marginStart="100dp"-->
+<!--        android:layout_marginTop="152dp"-->
+<!--        android:textColor="#4D6E40"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold" />-->
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/xaioxiao"
+        android:layout_above="@id/etzhangzhao"
+
+        />
+
+    <EditText
+        android:id="@+id/etzhangzhao"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@mipmap/bh"
+        android:drawableLeft="@mipmap/user_name_icon"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical"
+        android:hint="请输入用户名"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:layout_above="@id/etmima"
+        android:textColor="#000000"
+        android:textColorHint="#a3a3a3"
+        android:textSize="18sp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtmima"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="密码："-->
+<!--        android:layout_marginStart="100dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:textColor="#4D6E40"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_below="@id/txtzhanghao"/>-->
+
+    <EditText
+        android:id="@+id/etmima"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@mipmap/bh"
+        android:drawableLeft="@mipmap/psw_icon"
+        android:drawablePadding="10dp"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:paddingLeft="8dp"
+        android:singleLine="true"
+        android:layout_centerInParent="true"
+        android:textColor="#000000"
+        android:textColorHint="#a3a3a3"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="35dp"
+        android:text="登   录"
+        android:background="@drawable/den"
+        android:layout_below="@id/etmima"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tishi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:ellipsize="marquee" />
+
+</RelativeLayout>
