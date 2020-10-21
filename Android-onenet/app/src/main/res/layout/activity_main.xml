@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg3"
+    tools:context=".MainActivity">
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignWithParentIfMissing="true"
+        app:srcCompat="@drawable/wendu"
+        android:layout_marginTop="67dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
+    />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@id/imageView"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/shidu"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
+    />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/txtshijian"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/huoqu"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:text="退出应用"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/txtshijian"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@drawable/den"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:text="收衣服"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/button2"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@drawable/den"/>
+
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_marginTop="30dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:text="晾衣服"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/den"  />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/den"
+        android:text="手  动"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/button2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="111dp"
+        android:background="@drawable/den"
+        android:text="自  动"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtwendu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/imageView"
+        android:layout_alignTop="@id/imageView"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="21dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtshidu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/imageView2"
+        android:layout_alignTop="@id/imageView2"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="21dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtwendu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/imageView"
+        android:layout_alignTop="@id/imageView"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="88dp"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtshidu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/imageView2"
+        android:layout_alignTop="@id/imageView2"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="89dp"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tishi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:ellipsize="marquee" />
+
+    <TextView
+        android:id="@+id/txtshijian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_alignStart="@id/imageView"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textguangzhao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button3"
+        android:layout_alignStart="@id/button3"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="103dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/txtguangzhao2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button3"
+        android:layout_alignStart="@id/button3"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="103dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etbaojing1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button4"
+        android:layout_alignStart="@id/button4"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="90dp"
+        android:inputType="number|numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>
