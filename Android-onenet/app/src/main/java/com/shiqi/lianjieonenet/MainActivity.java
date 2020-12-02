@@ -29,18 +29,19 @@ public class MainActivity extends AppCompatActivity {
     static Double shidu;
     static Double guangzhao;
     static String va = "";
-
-
-
-    public final String url1 = "http://api.heclouds.com/devices/629063002/datapoints?datastream_id=3303_0_5700&limit=5";
-    public final String url2 = "http://api.heclouds.com/devices/629063002/datapoints?datastream_id=3304_0_5700&limit=5";
-    public final String url3 = "http://api.heclouds.com/devices/629063002/datapoints?datastream_id=3301_0_5700&limit=5";
-    public final String url4 = "http://api.heclouds.com/devices/629063002/datapoints?datastream_id=3311_2_5850";
+//首先先获取onenet的api来做到开发板的控制和获取参数，然后通过计算机网络http网络原理的get和post的方法来调试这些api来实现我们的功能
+//里面涉及到json的定位方法，杀死线程的方法
+//wendu shidu guangzhao duoji
+    public final String url1 = "http://api.heclouds.com/devices/645974289/datapoints?datastream_id=3303_0_5700&limit=5";
+    public final String url2 = "http://api.heclouds.com/devices/645974289/datapoints?datastream_id=3304_0_5700&limit=5";
+    public final String url3 = "http://api.heclouds.com/devices/645974289/datapoints?datastream_id=3301_0_5700&limit=5";
+    public final String url4 = "http://api.heclouds.com/devices/645974289/datapoints?datastream_id=3311_2_5850";
     private TextView txtwendu,txtshidu,txtwendu2,txtshidu2,tishi,shijian,txtguangzhao,txtguangzhao2;
     private EditText etguangzhao,etbaojin;
     private Button btn,shouhui,zhankai,kaiqiyingyong,guangbiyingyong,exit;
 
     @Override
+    //点击事件，绑定按钮和文本
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //定义一个参数，把这些参数传给post命令所需要的data
                     int con = 1;
                     switch (con){
                         case 1:
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         });
+        //控制命令的data,舵机控制，0、1就是TRUE或false
         shouhui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 lightControl("865820030399849","3311",1,1,5850,1);
             }
         });
+        //自动或者手动开关的控制参数
         guangbiyingyong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 String toastStr = null;
+                //这个通过http协议用post命令下发到开发板，开发板收到命令之后开始执行开启应用，这是一个总的开关
                 try {
                     String url = String.format("http://api.heclouds.com/nbiot?imei=%s&obj_id=%s&obj_inst_id=%d&mode=%d", imei, objId, objInstId, mode);
                     String body = String.format("{\"data\":[{\"res_id\": %d,\"val\": %d}]}", resId, val);
@@ -153,13 +158,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
     }
+    //开关控制
     public void SwitchControl(final String imei, final String objId, final int objInstId, final int mode, final int resId, final int val) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 String toastStr = null;
                 try {
+                    //api地址
                     String url = String.format("http://api.heclouds.com/nbiot?imei=%s&obj_id=%s&obj_inst_id=%d&mode=%d", imei, objId, objInstId, mode);
+                    //
                     String body = String.format("{\"data\":[{\"res_id\": %d,\"val\": %d}]}", resId, val);
                     Request request = HttpHandler.INSTANCE.post( url, RequestBody.create(HttpHandler.JSON_MEDIA_TYPE, body));
                     Response response = HttpHandler.INSTANCE.getResponse(request);
@@ -196,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
-    //杀死线程
+    //杀死线程,
     private void closeApp() {
         Log.e("bug", "Main close");
         //退出程序
@@ -347,6 +355,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Response response1 = client1.newCall(request1).execute();
                     String responseData1 = response1.body().string();
+                    //用Json定位的方式来定位到这是true或false
                     JSONObject object = new JSONObject(responseData1);
                     String data = object.getString("data");
                     JSONObject datastreams = new JSONObject(data);
